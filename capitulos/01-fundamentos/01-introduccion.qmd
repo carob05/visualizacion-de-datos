@@ -1,0 +1,38 @@
+# Capítulo 1 -- Fundamentos de la visualización de datos
+
+La cantidad de datos disponibles ha crecido de forma considerable. Empresas, universidades, gobiernos, aplicaciones y dispositivos generan información constantemente: ventas, temperaturas, calificaciones, ubicaciones, tiempos, edades, cantidades, preferencias y cientos de variables más.
+
+Sin embargo, disponer de datos no significa necesariamente disponer de información útil.
+
+Un conjunto de miles o millones de valores puede contener patrones importantes y, al mismo tiempo, resultar prácticamente imposible de interpretar si se observa únicamente como una tabla. La visualización de datos surge precisamente para abordar este problema: utilizar representaciones visuales que permitan explorar, analizar y comunicar información de manera efectiva.
+
+Pero visualizar datos no consiste simplemente en transformar una tabla en un gráfico. Antes de elegir colores, ejes o tipos de gráfico existe una pregunta mucho más importante:
+
+¿Qué queremos que el lector pueda comprender a partir de estos datos?
+
+Esta pregunta será uno de los principios fundamentales de este libro.
+
+
+## ¿Por qué visualizar datos?
+
+...
+
+## ¿Qué es la visualización de datos?
+
+...
+
+## Visualizar no es decorar
+
+...
+
+## De los datos a una historia
+
+...
+
+## ¿Qué aprenderás en este libro?
+
+...
+
+## Cómo utilizar este libro
+
+...

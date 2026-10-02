@@ -1,0 +1,27 @@
+body {
+    font-family: "Source Sans 3";
+}
+
+h1 {
+    font-family: "Inter";
+}
+
+h2 {
+    font-family: "Inter";
+}
+
+
+.concepto {
+    padding: 1rem;
+    border-radius: 12px;
+}
+
+.importante {
+    padding: 1rem;
+    border-radius: 12px;
+}
+
+.ejercicio {
+    padding: 1rem;
+    border-radius: 12px;
+}

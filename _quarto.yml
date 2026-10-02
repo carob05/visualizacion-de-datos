@@ -1,0 +1,24 @@
+project:
+  type: book
+
+book:
+  title: "Visualización de Datos"
+  author: "Carolina Bonifacino"
+
+  chapters:
+    - index.qmd
+    - capitulos/01-fundamentos/01-introduccion.qmd
+    - capitulos/01-fundamentos/02-tipos-de-datos.qmd
+
+    - capitulos/02-graficos/01-elegir-grafico.qmd
+    - capitulos/02-graficos/02-comparacion.qmd
+
+format:
+  html:
+    theme: cosmo
+
+  pdf:
+    documentclass: scrreprt
+
+  epub:
+    toc: true
