@@ -1,3 +1,6 @@
+lang: es
+bibliography: references.bib
+
 project:
   type: book
 
@@ -7,11 +10,18 @@ book:
 
   chapters:
     - index.qmd
-    - capitulos/01-fundamentos/01-introduccion.qmd
-    - capitulos/01-fundamentos/02-tipos-de-datos.qmd
 
-    - capitulos/02-graficos/01-elegir-grafico.qmd
-    - capitulos/02-graficos/02-comparacion.qmd
+    - part: "Fundamentos"
+      chapters:
+        - capitulos/01-fundamentos/01-introduccion.qmd
+        - capitulos/01-fundamentos/02-tipos-de-datos.qmd
+
+    - part: "Gráficos"
+      chapters:
+        - capitulos/02-graficos/01-elegir-grafico.qmd
+        - capitulos/02-graficos/02-comparacion.qmd
+
+    - references.qmd
 
 format:
   html:

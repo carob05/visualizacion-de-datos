@@ -1,4 +1,4 @@
-# Fundamentos de la visualización de datos
+# Ver para entender
 
 La cantidad de datos disponibles ha crecido de forma considerable. Empresas, universidades, gobiernos, aplicaciones y dispositivos generan información constantemente: ventas, temperaturas, calificaciones, ubicaciones, tiempos, edades, cantidades, preferencias y cientos de variables más.
 
@@ -15,7 +15,68 @@ Esta pregunta será uno de los principios fundamentales de este libro.
 
 ## ¿Por qué visualizar datos?
 
-...
+Imagina que te entregan cuatro conjuntos de datos. Cada uno tiene 11 pares de valores, `x` e `y`, y tu trabajo es describirlos. Haces lo que haría cualquier persona prudente: calculas los números que resumen cada conjunto, como el promedio, la dispersión y la relación entre `x` e `y`.
+
+El resultado es este:
+
+| Conjunto | Media de x | Varianza de x | Media de y | Varianza de y | Correlación | Recta de regresión |
+|:--:|--:|--:|--:|--:|--:|:--|
+| I | 9 | 11 | 7,50 | 4,1 | 0,82 | y = 3,00 + 0,50x |
+| II | 9 | 11 | 7,50 | 4,1 | 0,82 | y = 3,00 + 0,50x |
+| III | 9 | 11 | 7,50 | 4,1 | 0,82 | y = 3,00 + 0,50x |
+| IV | 9 | 11 | 7,50 | 4,1 | 0,82 | y = 3,00 + 0,50x |
+
+: Resumen numérico de los cuatro conjuntos. Datos de @anscombe1973, cálculos con `python/anscombe.py`. Con más decimales aparecen diferencias de milésimas, sin importancia práctica. {#tbl-resumen}
+
+Mira la tabla un momento. Los cuatro conjuntos tienen el mismo promedio, la misma dispersión, la misma correlación y hasta la misma recta. Con esta información, la conclusión razonable sería que los cuatro conjuntos son, en esencia, **el mismo**.
+
+::: {.concepto}
+**¿Qué significan esas columnas?**
+
+- **Media:** el promedio de los valores.
+- **Varianza:** mide cuánto se alejan los valores de su promedio. Si es pequeña, los valores están agrupados; si es grande, están dispersos.
+- **Correlación:** un número entre -1 y 1 que indica qué tan bien se alinean los puntos en una recta. Cerca de 1, la recta sube; cerca de -1, baja; cerca de 0, no hay una recta que los resuma. Un valor de 0,82 indica una relación creciente bastante fuerte.
+- **Recta de regresión:** la recta que mejor se ajusta a los puntos. La ecuación `y = 3,00 + 0,50x` dice que, en promedio, cada vez que `x` aumenta una unidad, `y` aumenta media unidad.
+:::
+
+### Ahora, dibujémoslos
+
+Hagamos lo que la tabla no hace: poner cada punto en un gráfico.
+
+![Los cuatro conjuntos del cuarteto de Anscombe. La línea punteada es la recta de regresión, idéntica en los cuatro. Elaboración propia con datos de @anscombe1973.](../../images/graficos/anscombe-cuarteto.png){#fig-anscombe fig-alt="Cuatro gráficos de dispersión, uno por conjunto, con la misma recta de regresión. El conjunto I muestra puntos dispersos alrededor de la recta. El II describe una curva. El III forma una línea casi perfecta con un punto atípico arriba. El IV tiene diez puntos con el mismo valor de x y un único punto lejano a la derecha."}
+
+Los números decían que eran iguales. Los gráficos (@fig-anscombe) cuentan cuatro historias muy distintas:
+
+- **Conjunto I:** los puntos se reparten alrededor de una recta con algo de dispersión. Es el caso en que la recta resume bien lo que ocurre.
+- **Conjunto II:** los puntos dibujan una curva. Existe una relación clara entre `x` e `y`, pero no es una recta, y la recta de regresión la describe mal.
+- **Conjunto III:** casi todos los puntos forman una línea muy ordenada, salvo uno que se aleja del resto. Ese único punto "tira" de la recta. Sin él, la recta sería aproximadamente `y = 4,01 + 0,35x` y la correlación sería prácticamente 1.
+- **Conjunto IV:** diez de los once puntos tienen exactamente el mismo valor de `x`. Un único punto, con `x = 19`, es el que determina toda la recta. Sin ese punto ni siquiera se podría calcular una recta, porque `x` no varía.
+
+::: {.importante}
+**Idea clave.** Un resumen numérico comprime muchos datos en unos pocos números, y al comprimir se pierde información. Conjuntos con historias muy distintas pueden producir exactamente el mismo resumen. El gráfico recupera lo que el resumen esconde: la forma de los datos.
+:::
+
+### Una idea cotidiana
+
+Esto te puede sonar familiar. Dos estudiantes terminan el semestre con promedio 7. Una sacó 7, 7, 7 y 7 en sus cuatro pruebas. La otra sacó 10, 10, 4 y 4. El promedio es el mismo, pero la experiencia de cada una fue muy diferente. El promedio no miente, pero tampoco cuenta toda la historia.
+
+### ¿Fue una casualidad?
+
+Estos cuatro conjuntos no son datos reales: el estadístico Francis Anscombe los construyó a propósito en 1973 para mostrar este problema [@anscombe1973]. Su recomendación era hacer ambas cosas, los cálculos y los gráficos, y estudiar los dos resultados.
+
+Décadas después, Justin Matejka y George Fitzmaurice fueron más lejos. Con un método computacional llamado *recocido simulado* (*simulated annealing*), que mueve los puntos poco a poco sin alterar las estadísticas, construyeron una familia de conjuntos de datos con la misma media, la misma desviación estándar y la misma correlación, pero con formas totalmente distintas. Uno de ellos dibuja un dinosaurio, y por eso el conjunto se conoce como el *Datasaurus Dozen* [@matejka2017].
+
+Los casos extremos como estos son poco frecuentes en la práctica. Pero los problemas que ilustran (una relación curva, un punto atípico, un solo dato que domina el resultado) aparecen todo el tiempo en datos reales, y los números por sí solos no los delatan.
+
+::: {.ejercicio}
+**Pruébalo tú.**
+
+1. Ejecuta `python python/anscombe.py` desde la raíz del repositorio. Verás la tabla de estadísticas calculada y se generará la figura.
+2. En el archivo, cambia el valor `12.74` del conjunto III por `8.5` y vuelve a ejecutarlo. ¿Qué pasa con la recta y con la correlación? ¿Por qué?
+3. Si solo hubieras tenido la tabla de este capítulo, ¿habrías podido saber que el conjunto III tiene un punto atípico?
+:::
+
+Entonces, visualizar datos no es un adorno que se agrega al final del análisis: es una herramienta para entender qué dicen realmente los datos. Pero, ¿qué es exactamente la visualización de datos? Lo vemos a continuación.
 
 ## ¿Qué es la visualización de datos?
 

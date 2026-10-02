@@ -12,3 +12,6 @@ Thumbs.db
 *.aux
 *.log
 *.tex
+
+/.quarto/
+**/*.quarto_ipynb
