@@ -1,27 +1,32 @@
 body {
-    font-family: "Source Sans 3";
+    font-family: "Source Sans 3", "Segoe UI", system-ui, sans-serif;
 }
 
-h1 {
-    font-family: "Inter";
-}
-
+h1,
 h2 {
-    font-family: "Inter";
+    font-family: "Inter", "Segoe UI", system-ui, sans-serif;
 }
 
-
-.concepto {
-    padding: 1rem;
-    border-radius: 12px;
-}
-
-.importante {
-    padding: 1rem;
-    border-radius: 12px;
-}
-
+.concepto,
+.importante,
 .ejercicio {
     padding: 1rem;
     border-radius: 12px;
+    margin: 1.2rem 0;
+    border-left: 6px solid;
+}
+
+.concepto {
+    background-color: #eef4fb;
+    border-left-color: #2f6fb3;
+}
+
+.importante {
+    background-color: #fdf3e3;
+    border-left-color: #d98a1d;
+}
+
+.ejercicio {
+    background-color: #eef7ee;
+    border-left-color: #3a8a4a;
 }

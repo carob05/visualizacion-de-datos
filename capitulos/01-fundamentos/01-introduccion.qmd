@@ -1,4 +1,4 @@
-# Capítulo 1 -- Fundamentos de la visualización de datos
+# Fundamentos de la visualización de datos
 
 La cantidad de datos disponibles ha crecido de forma considerable. Empresas, universidades, gobiernos, aplicaciones y dispositivos generan información constantemente: ventas, temperaturas, calificaciones, ubicaciones, tiempos, edades, cantidades, preferencias y cientos de variables más.
 

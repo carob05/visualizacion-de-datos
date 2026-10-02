@@ -1,0 +1,14 @@
+output/
+_book/
+.quarto/
+/.luarc.json
+*_files/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.venv/
+.DS_Store
+Thumbs.db
+*.aux
+*.log
+*.tex

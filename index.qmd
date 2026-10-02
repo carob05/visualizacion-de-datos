@@ -1,0 +1,10 @@
+# Prefacio {.unnumbered}
+
+Este libro reúne, de forma ordenada, los conceptos fundamentales de la visualización de datos: cómo percibimos un gráfico, qué tipo de gráfico conviene según la pregunta y qué errores conviene evitar.
+
+Nace como material de estudio y se escribe de forma abierta, por lo que se encuentra en construcción. Cada capítulo busca explicar las ideas con definiciones claras, ejemplos y ejercicios.
+
+::: {.callout-note}
+## Versión 0.1
+Este es un borrador inicial. Si encuentras un error o tienes una sugerencia, puedes avisar abriendo un *issue* en el repositorio de GitHub.
+:::
