@@ -389,8 +389,102 @@ Con esto cerramos las ideas centrales del capítulo. Antes de seguir, conviene s
 
 ## ¿Qué aprenderás en este libro?
 
-...
+Este libro responde, paso a paso, una pregunta: **¿cómo logro que un gráfico ayude a alguien a entender los datos?** No necesitas conocimientos previos de estadística ni de programación. Los conceptos se explican en el momento en que aparecen.
+
+### Un mapa del libro
+
+El libro tiene dos partes. La primera enseña a **ver y pensar** los datos. La segunda enseña a **elegir y construir** gráficos.
+
+| Parte | Capítulo | Pregunta que responde | Estado |
+|:--|:--|:--|:--|
+| I. Fundamentos | 1. Ver para entender | ¿Por qué y para qué visualizamos datos? | Borrador 0.1 |
+| | 2. Tipos de datos | ¿Con qué clase de datos trabajamos y qué cambia según su tipo? | En preparación |
+| II. Gráficos | 3. Elegir un gráfico | ¿Qué gráfico conviene según lo que quiero mostrar? | En preparación |
+| | 4. Comparación | ¿Cómo se comparan valores y grupos? | En preparación |
+
+: Mapa del libro. Los capítulos 2 a 4 están en preparación y sus títulos son provisionales. {#tbl-mapa}
+
+### Qué podrás hacer al terminar este capítulo
+
+Cada sección de este capítulo te deja una capacidad concreta:
+
+- **Sección 1.1:** explicar por qué un resumen numérico no basta para entender unos datos, y reconocer el cuarteto de Anscombe como el ejemplo clásico.
+- **Sección 1.2:** definir qué es visualizar datos, e identificar las marcas y los canales de cualquier gráfico.
+- **Sección 1.3:** decidir qué conservar y qué quitar de un gráfico con la prueba de la tarea, y calcular el factor de mentira de un gráfico de barras.
+- **Sección 1.4:** convertir un gráfico para explorar en uno para comunicar, con un titular que afirme algo y que los datos realmente sostengan.
+
+### Qué no encontrarás
+
+- **Un manual de una herramienta.** Las ideas valen para cualquier programa. El código en Python que acompaña al libro sirve como ejemplo, no como curso de programación.
+- **Mapas, redes ni imágenes científicas.** Como vimos en la sección 1.2, el libro se concentra en gráficos para datos organizados en tablas.
+- **Un reemplazo de la estadística.** Los gráficos y los cálculos se complementan, como mostró el cuarteto de Anscombe.
+
+### Para quién es
+
+Para cualquier persona que quiera entender y comunicar mejor con datos: estudiantes, profesionales de cualquier área, o simplemente lectores curiosos. Si sabes qué es una tabla y qué es un promedio, tienes todo lo necesario.
+
 
 ## Cómo utilizar este libro
 
-...
+### Tres formas de leerlo
+
+- **De corrido.** Es el camino recomendado la primera vez: cada sección se apoya en la anterior.
+- **Como consulta.** Si ya conoces las ideas básicas, puedes ir directo a la sección que necesites. Las referencias cruzadas ("ver la sección 1.3") te indican de dónde viene cada idea.
+- **Con las manos.** Los ejercicios y el código de cada capítulo están pensados para que practiques. Aprender a ver gráficos requiere mirar muchos.
+
+### Las cajas de colores
+
+A lo largo del libro verás tres tipos de caja:
+
+::: {.concepto}
+**Concepto.** Una definición o una idea que necesitas para seguir. Si ya la conoces, puedes saltarla.
+:::
+
+::: {.importante}
+**Idea clave.** El mensaje central de una sección, para que te lo lleves aunque lo demás se te olvide.
+:::
+
+::: {.ejercicio}
+**Pruébalo tú.** Una actividad para practicar lo aprendido. En esta versión del libro no se incluyen las respuestas.
+:::
+
+### Figuras, tablas y citas
+
+- Las figuras y las tablas se numeran solas y se mencionan en el texto, por ejemplo la @fig-anscombe. Todas las figuras tienen una descripción alternativa para quienes no pueden verlas.
+- Cuando una figura usa **datos ficticios**, el pie lo dice. Si los datos son reales, se indica la fuente.
+- Las afirmaciones apoyadas en la literatura llevan una cita entre paréntesis, como (Munzner 2014), y la referencia completa está en **Referencias**, al final del libro. Cuando el original está en inglés y se cita una frase, se aclara que la traducción es propia.
+- Te animamos a que verifiques las fuentes importantes por tu cuenta. Cuando una fuente tiene DOI, el enlace lleva directamente al texto original.
+
+### El código y los datos
+
+El libro vive en un repositorio de GitHub. Dentro de él, cada carpeta tiene una función:
+
+| Carpeta | Qué contiene |
+|:--|:--|
+| `capitulos/` | El texto del libro |
+| `python/` | Los programas que generan las figuras |
+| `data/` | Los datos usados en los ejemplos |
+| `images/` | Las figuras ya generadas |
+
+: Carpetas del repositorio. {#tbl-carpetas}
+
+Para reproducir las figuras necesitas Python 3. Desde la carpeta principal del repositorio, ejecuta:
+
+```bash
+python -m pip install -r requirements.txt
+python python/anscombe.py
+```
+
+El primer comando instala las librerías necesarias (una sola vez). El segundo calcula las estadísticas del cuarteto de Anscombe y genera su figura. Cada programa indica en sus primeras líneas qué hace y de dónde provienen sus datos.
+
+### Convenciones
+
+- En el texto, los decimales se escriben con coma (4,26). En el código, con punto (4.26), como exige Python.
+- Los nombres de variables, archivos y comandos aparecen en `tipografía de código`.
+- Los términos en inglés se escriben en cursiva la primera vez, junto a su traducción, porque la mayoría de la literatura está en ese idioma.
+
+### Un libro en construcción
+
+Esta es la versión 0.1: un borrador abierto que se mejora con el tiempo. Si encuentras un error o tienes una sugerencia, puedes avisar abriendo un *issue* en el repositorio. Una buena corrección es una forma de colaborar con el libro.
+
+En el siguiente capítulo empezamos con los ladrillos de todo gráfico: los datos.
